@@ -32,6 +32,22 @@
     <element xmi:type="ecore:EClass" href="StateMachineModel.ecore#//State"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4VcdgkagEeGupNvC_cP-iA" x="276" y="288"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_8Fy3wEaiEeGupNvC_cP-iA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_8Fze0EaiEeGupNvC_cP-iA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_8F0F4EaiEeGupNvC_cP-iA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_8F0F4UaiEeGupNvC_cP-iA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8F0F4kaiEeGupNvC_cP-iA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8F0F40aiEeGupNvC_cP-iA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_8F0F5EaiEeGupNvC_cP-iA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_8F0F5UaiEeGupNvC_cP-iA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8F0F5kaiEeGupNvC_cP-iA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8F0F50aiEeGupNvC_cP-iA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_8Fy3wUaiEeGupNvC_cP-iA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="StateMachineModel.ecore#//StateVertex"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8Fy3wkaiEeGupNvC_cP-iA" x="576" y="128"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_S-it8UafEeGupNvC_cP-iA"/>
   <element xmi:type="ecore:EPackage" href="StateMachineModel.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_5BK7EEagEeGupNvC_cP-iA" type="3002" source="_qepiQEafEeGupNvC_cP-iA" target="_4VcdgEagEeGupNvC_cP-iA">
