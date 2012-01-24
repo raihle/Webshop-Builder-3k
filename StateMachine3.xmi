@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<statemachine_mk2:StateMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:statemachine_mk2="http://statemachine_mk2/1.0" xsi:schemaLocation="http://statemachine_mk2/1.0 StateMachine_mk2.ecore" initial_state="//@simple_states.0">
+  <simple_states outgoing="//@transitions.2" incoming="//@transitions.0" name="Hungry"/>
+  <simple_states outgoing="//@transitions.0" incoming="//@transitions.4" name="Happy"/>
+  <simple_states outgoing="//@transitions.4" incoming="//@transitions.2 //@transitions.3" name="Eating"/>
+  <simple_states outgoing="//@transitions.3 //@transitions.5" name="Starving"/>
+  <transitions source="//@simple_states.1" target="//@simple_states.0" name="happy->hungry"/>
+  <transitions name="hungry->starving"/>
+  <transitions source="//@simple_states.0" target="//@simple_states.2" name="hungry->eating"/>
+  <transitions source="//@simple_states.3" target="//@simple_states.2" name="starving->eating"/>
+  <transitions source="//@simple_states.2" target="//@simple_states.1" triggers="//@events.4" name="eating->happy"/>
+  <transitions source="//@simple_states.3" target="//@final_states" name="starving->dead"/>
+  <events possible_states="//@simple_states.1" causes="//@transitions.0" description="25 minutes without food"/>
+  <events possible_states="//@simple_states.0" causes="//@transitions.1" description="1 day without food"/>
+  <events possible_states="//@simple_states.0 //@simple_states.3" causes="//@transitions.2 //@transitions.3" description="given food"/>
+  <events possible_states="//@simple_states.2" causes="//@transitions.4" description="finished eating"/>
+  <events description="display smiley &amp; purr"/>
+  <events possible_states="//@simple_states.3" causes="//@transitions.5" description="7 days without food"/>
+  <final_states incoming="//@transitions.5" name="Dead"/>
+  <composite_states name="Living" substates="//@simple_states.0 //@simple_states.1 //@simple_states.2 //@simple_states.3"/>
+</statemachine_mk2:StateMachine>
