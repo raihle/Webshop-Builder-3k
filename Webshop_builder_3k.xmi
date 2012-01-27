@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<webshop_builder_3k_model:Webshop_builder_3k xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:webshop_builder_3k_model="http://webshop_builder_3k_model/1.0" xsi:schemaLocation="http://webshop_builder_3k_model/1.0 Webshop_Builder_3k_Model.ecore">
+  <pages title="Home">
+    <components xsi:type="webshop_builder_3k_model:Branding" name="">
+      <company_name name="with Company Title" text="Potatoes &amp; Co."/>
+      <company_logo name="of Potatoes are nice" source="potato.jpg" title="Potatoes are nice" alternative_text="Potatoes are nice"/>
+    </components>
+  </pages>
+  <knowledge_bases xml_file_uri="db.xml"/>
+  <item_to_kb source="//@item_detail_page/@components.0" target="//@knowledge_bases.0"/>
+  <reuse_link source="//@item_list_page/@reuse_components.0" target="//@pages.0/@components.0"/>
+  <item_list_page title="List of Items">
+    <components xsi:type="webshop_builder_3k_model:Text_field" name="Header" text="Potato Chips:"/>
+    <reuse_components/>
+    <results name="of Potato Chips">
+      <result_template name="Article (minimized)">
+        <item_picture name="XPath://Item/Picture" source="XPath://Item/Picture" title=""/>
+        <text_fields name="Price" text="XPath://Item/Price"/>
+        <text_fields name="Title" text="XPath://Item/Title"/>
+      </result_template>
+    </results>
+  </item_list_page>
+  <item_detail_page title="Item Details" item="//@item_detail_page/@components.0">
+    <components xsi:type="webshop_builder_3k_model:Item" name="Article">
+      <item_picture name="XPath://Item/Picture" source="XPath://Item/Picture" title=""/>
+      <text_fields name="Price" text="XPath://Item/Price"/>
+      <text_fields name="Description" text="XPath://Item/Description"/>
+      <text_fields name="Title" text="XPath://Item/Title"/>
+    </components>
+  </item_detail_page>
+</webshop_builder_3k_model:Webshop_builder_3k>
