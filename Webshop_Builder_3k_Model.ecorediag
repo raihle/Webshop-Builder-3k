@@ -343,10 +343,6 @@
   <children xmi:type="notation:Node" xmi:id="_5Z-00EjyEeGfFo_EC5pq4Q" type="1001">
     <children xmi:type="notation:Node" xmi:id="_5Z-000jyEeGfFo_EC5pq4Q" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_5Z-01EjyEeGfFo_EC5pq4Q" type="5001">
-      <children xmi:type="notation:Node" xmi:id="_5Z-03EjyEeGfFo_EC5pq4Q" type="2001">
-        <element xmi:type="ecore:EAttribute" href="Webshop_Builder_3k_Model.ecore#//Social_button/code_snippet"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_5Z-03UjyEeGfFo_EC5pq4Q"/>
-      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_5Z-01UjyEeGfFo_EC5pq4Q"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_5Z-01kjyEeGfFo_EC5pq4Q"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_5Z-010jyEeGfFo_EC5pq4Q"/>
