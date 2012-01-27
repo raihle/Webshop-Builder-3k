@@ -8,6 +8,9 @@
         upperBound="-1" eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reuse_components" upperBound="-1"
         eType="#//Reuse_component" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Reuse_component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="xposition" lowerBound="1"
@@ -26,22 +29,26 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Picture" eSuperTypes="#//Component">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="picture_identifier" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alternative_text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Text_field" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="header_level" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="User_input_field" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="User_input_field" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Knowledge_base">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="xml_file_uri" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component_to_KB_link">
+  <eClassifiers xsi:type="ecore:EClass" name="Item_to_KB_link">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="#//Component"/>
+        eType="#//Item"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//Knowledge_base"/>
   </eClassifiers>
@@ -65,16 +72,18 @@
         eType="#//Page" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="free_components" upperBound="-1"
         eType="#//Component" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="knowledge_bases" upperBound="-1"
-        eType="#//Knowledge_base" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component_to_kb" upperBound="-1"
-        eType="#//Component_to_KB_link" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="knowledge_bases" lowerBound="1"
+        upperBound="-1" eType="#//Knowledge_base" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item_to_kb" upperBound="-1"
+        eType="#//Item_to_KB_link" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reuse_link" upperBound="-1"
         eType="#//Reuses_component_link" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="item_list_page" lowerBound="1"
         eType="#//Item_list_page" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="item_detail_page" lowerBound="1"
         eType="#//Item_detail_page" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="navigation_to_page_link"
+        upperBound="-1" eType="#//Navigation_to_Page_link" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="item_picture" lowerBound="1"
@@ -84,7 +93,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Login_widget"/>
   <eClassifiers xsi:type="ecore:EClass" name="Slideshow"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Social_button"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Social_button">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code_snippet"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Newsletter_subscription_widget"/>
   <eClassifiers xsi:type="ecore:EClass" name="Shopping_cart_button"/>
   <eClassifiers xsi:type="ecore:EClass" name="Search_widget"/>
@@ -93,6 +104,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Result_list" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="result_template" lowerBound="1"
         eType="#//Item" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number_of_items_per_page"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Source_code"/>
   <eClassifiers xsi:type="ecore:EClass" name="Item_detail_page" eSuperTypes="#//Page">
@@ -102,5 +115,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="results" lowerBound="1"
         eType="#//Result_list" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Navigation_button"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Navigation_button" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Navigation_to_Page_link">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Source" lowerBound="1"
+        eType="#//Navigation_button"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Page"/>
+  </eClassifiers>
 </ecore:EPackage>
