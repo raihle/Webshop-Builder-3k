@@ -1,6 +1,28 @@
 <items>
-	<item name="Sourcream and onion" price="€3" description="The most delicious chips ever made! Proof inside! ;)" availability="In stock" rating="5"></item>
-	<item name="Sourcream and onion" price="€3" description="The most delicious chips ever made! Proof inside! ;)" availability="In stock" rating="5"></item>
-	<item name="Sourcream and onion" price="€3" description="The most delicious chips ever made! Proof inside! ;)" availability="In stock" rating="5"></item>
-	<item name="Sourcream and onion" price="€3" description="The most delicious chips ever made! Proof inside! ;)" availability="In stock" rating="5"></item>
-	<item name="Sourcream and onion" price="€3" description="The most delicious chips ever made! Proof inside! ;)" availability="In stock" rating="5"></item>
+	<item>
+		<picture>./chips.jpg</picture>
+		<price>€3</price>
+		<description>The most delicious chips ever made! Proof inside! ;)</description>
+		<availability>In stock</availability>
+		<rating>5</rating>
+		<name>Sourcream and onion chips</name>
+	</item>
+	
+	<item>
+		<picture>./item-picture-1.png</picture>
+		<price>€2:99</price>
+		<description>Second place, but soooo close.</description>
+		<availability>In stock</availability>
+		<rating>4</rating>
+		<name>Grill chips</name>
+	</item>
+	
+	<item>
+		<picture>http://dummyimage.com/100/ff0055</picture>
+		<price>€2:98</price>
+		<description>Pig in a potato is AWESOME</description>
+		<availability>Sold out, more arriving soon!</availability>
+		<rating>4</rating>
+		<name>Bacon chips</name>
+	</item>
+</items>
