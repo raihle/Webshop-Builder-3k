@@ -80,8 +80,8 @@
         eType="#//Reuses_component_link" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="item_list_page" lowerBound="1"
         eType="#//Item_list_page" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="item_detail_page" lowerBound="1"
-        eType="#//Item_detail_page" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item_detail_page" eType="#//Item_detail_page"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="navigation_to_page_link"
         upperBound="-1" eType="#//Navigation_to_Page_link" containment="true"/>
   </eClassifiers>

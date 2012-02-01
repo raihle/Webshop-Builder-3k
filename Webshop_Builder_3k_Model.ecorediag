@@ -740,7 +740,7 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_5adV7EjyEeGfFo_EC5pq4Q" type="3002" source="_5Z4uJEjyEeGfFo_EC5pq4Q" target="_5Zsg4kjyEeGfFo_EC5pq4Q">
     <children xmi:type="notation:Node" xmi:id="_5adV8EjyEeGfFo_EC5pq4Q" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_5adV8UjyEeGfFo_EC5pq4Q" x="-10" y="-10"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5adV8UjyEeGfFo_EC5pq4Q" x="-4" y="-14"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_5adV8kjyEeGfFo_EC5pq4Q" type="4012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_5adV80jyEeGfFo_EC5pq4Q" x="10" y="10"/>
