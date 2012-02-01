@@ -25,16 +25,16 @@ function populateList() {
 		var description = get(item, "description");
 		var text = document.getElementById("result-list").innerHTML;
 				
-		text = text.concat("<div class=\"grid_10 item\" id=\"" + i + "\">");
+		text = text.concat("<div class=\"item\" id=\"" + i + "\">");
 		
 		text = text.concat("<div class=\"title\"><h3>" + name
 				+ "</h3></div>");
 		text = text.concat("<div class=\"price\"><p>Price: <span class=\"value\">" + price
 				+ "</span></p></div>");
-		text = text.concat("<div class=\"clear\"></div>");
-		text = text.concat("<div class=\"grid_2 picture\"><img src=\"" + picture + "\"/></div>");
+
+		text = text.concat("<div class=\"picture\"><img width=\"100px\" height=\"100px\" src=\"" + picture + "\"/></div>");
 		
-		text = text.concat("<div class=\"grid_7 description\"><p>" + description
+		text = text.concat("<div class=\"description\"><p>" + description
 				+ "</p></div>");
 		text = text.concat("</div>");
 		document.getElementById("result-list").innerHTML = text;

@@ -5,7 +5,6 @@
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
-@import url("960_12_col.css");
 
 /* =============================================================================
    HTML5 element display
@@ -212,6 +211,7 @@ p { font-family: "Helvetica", sans-serif; }
 .item .price .value { font-size: 150%; color: #cc0000;}
 .copyright { padding: 10px 0 10px 0; }
 .copyright p { text-align: center; }
+
 
 
 
