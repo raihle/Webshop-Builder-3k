@@ -199,19 +199,33 @@ table { border-collapse: collapse; border-spacing: 0; }
    Primary styles
    Author: Awesome Ness Awesome
    ========================================================================== */
-body { background-color: black; }
+/*body { background-color: black; }
 .content { background-color: white; transparent: false; padding: 0;}
 .branding {background-color: ff22aa; transparent: false; margin: 0; width: 960px !important; padding: 0;}
 p { font-family: "Helvetica", sans-serif; }
-/*.result-list { border: 3px dotted pink; }*/
 .item { border: 1px solid black; margin: 5px 0;}
 .item .title {margin-left: 10px; float: left;}
 .item .picture img { border: 1px solid black; }
 .item .price { margin-right: 10px; float: right; }
 .item .price .value { font-size: 150%; color: #cc0000;}
 .copyright { padding: 10px 0 10px 0; }
-.copyright p { text-align: center; }
+.copyright p { text-align: center; }*/
 
+body { position:absolute;left:0;right:0; }
+#resultlist_1 .item { position:absolute;left:30px; width:800px;height:130px; border: 1px solid black; }
+#resultlist_1 .item .title { position:absolute;left:5px;top:5px; }
+#resultlist_1 .item .price { position:absolute;right:5px;top:5px; }
+#resultlist_1 .item .price .value { font-size: 150%; color: #cc0000; }
+#resultlist_1 .item .description { position:absolute;left:110px;top:25px; }
+#resultlist_1 .item .picture { position:absolute;left:5px;top:25px; }
+#page_1 { position:absolute;margin-left:auto;margin-right:auto;width:960px; }
+#branding_1 { width:960px;height:100px;background-color:blue; }
+#text_1 { position:absolute;left:120px;top:50px; }
+#picture_1 { position:absolute; }
+#text_2 { position:absolute;left:10px; top:110px; }
+#text_3 { position:absolute;left:10px;top:130px; }
+#resultlist_1 { position:absolute;left:10px; top:160px; }
+#text_4 { position:absolute;left:0;top:600px; }
 
 
 
