@@ -11,6 +11,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="canvas_color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//Style"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Reuse_component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="xposition" lowerBound="1"
@@ -27,6 +30,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignment" eType="#//Alignment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//Style"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Picture" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" lowerBound="1"
@@ -47,9 +53,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Item_to_KB_link">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="#//Item"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item" lowerBound="1" eType="#//Item"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="knowledge_base" lowerBound="1"
         eType="#//Knowledge_base"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Checkbox" eSuperTypes="#//User_input_field"/>
@@ -104,6 +109,8 @@
         eType="#//Item" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number_of_items_per_page"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="distance_between_items"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Source_code"/>
   <eClassifiers xsi:type="ecore:EClass" name="Item_detail_page" eSuperTypes="#//Page">
@@ -121,5 +128,18 @@
         eType="#//Navigation_button"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//Page"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Style">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="border" eType="#//Border"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="background_color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Border">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="thickness" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Alignment">
+    <eLiterals name="left"/>
+    <eLiterals name="right" value="1"/>
   </eClassifiers>
 </ecore:EPackage>

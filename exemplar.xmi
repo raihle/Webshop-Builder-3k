@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<webshop_builder_3k_model:Webshop_builder_3k xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:webshop_builder_3k_model="http://webshop_builder_3k_model/1.0" xsi:schemaLocation="http://webshop_builder_3k_model/1.0 Webshop_Builder_3k_Model.ecore">
+  <knowledge_bases xml_file_uri="items.xml"/>
+  <item_to_kb item="//@item_list_page/@results/@result_template" knowledge_base="//@knowledge_bases.0"/>
+  <item_list_page width="960" title="" canvas_color="black">
+    <components xsi:type="webshop_builder_3k_model:Branding" width="960" height="100">
+      <style background_color="blue"/>
+      <company_name xposition="120" yposition="50" name="" header_level="1" text="Example webshop"/>
+      <company_logo source="wb3k-small.png" alternative_text="webshop logo"/>
+    </components>
+    <components xsi:type="webshop_builder_3k_model:Text_field" xposition="10" yposition="110" text="Hello, webshop!"/>
+    <components xsi:type="webshop_builder_3k_model:Text_field" xposition="10" yposition="130" header_level="2" text="Items"/>
+    <components xsi:type="webshop_builder_3k_model:Text_field" yposition="600" name="copyright" text="(c) 2012 ANA"/>
+    <results xposition="10" yposition="160" name="" distance_between_items="5">
+      <result_template xposition="30" width="800" height="130" name="template">
+        <style>
+          <border thickness="1" color="black"/>
+        </style>
+        <item_picture source="item:picture"/>
+        <text_fields xposition="5" yposition="5" name="title" header_level="3" text="item:name"/>
+        <text_fields xposition="5" yposition="5" name="price" alignment="right" text="item:price"/>
+        <text_fields xposition="110" yposition="25" name="description" text="item:description"/>
+      </result_template>
+    </results>
+  </item_list_page>
+</webshop_builder_3k_model:Webshop_builder_3k>
