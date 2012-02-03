@@ -2,7 +2,7 @@
 <webshop_builder_3k_model:Webshop_builder_3k xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:webshop_builder_3k_model="http://webshop_builder_3k_model/1.0" xsi:schemaLocation="http://webshop_builder_3k_model/1.0 Webshop_Builder_3k_Model.ecore">
   <knowledge_bases xml_file_uri="items.xml"/>
   <item_to_kb item="//@item_list_page/@results/@result_template" knowledge_base="//@knowledge_bases.0"/>
-  <item_list_page width="960" title="" canvas_color="black">
+  <item_list_page width="960" title="Example homepage" canvas_color="black">
     <components xsi:type="webshop_builder_3k_model:Branding" width="960" height="100">
       <style background_color="blue"/>
       <company_name xposition="120" yposition="50" name="" header_level="1" text="Example webshop"/>
