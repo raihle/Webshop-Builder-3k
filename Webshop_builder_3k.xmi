@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="ASCII"?>
-<webshop_builder_3k_model:Webshop_builder_3k xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:webshop_builder_3k_model="http://webshop_builder_3k_model/1.0" xsi:schemaLocation="http://webshop_builder_3k_model/1.0 Webshop_Builder_3k_Model.ecore">
-  <pages title="Home">
-    <components xsi:type="webshop_builder_3k_model:Branding" name="">
-      <company_name name="with Company Title" text="Potatoes &amp; Co."/>
-      <company_logo name="of Potatoes are nice" source="potato.jpg" title="Potatoes are nice" alternative_text="Potatoes are nice"/>
+<webshop_builder_3k_model:Webshop_builder_3k xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:webshop_builder_3k_model="http://webshop_builder_3k_model/1.0" xsi:schemaLocation="http://webshop_builder_3k_model/1.0 Webshop_Builder_3k_Model.ecore" company_name="Potatos &amp; Chili" index_page="//@pages.0">
+  <pages width="200" title="Index" canvas_color="blue">
+    <components xsi:type="webshop_builder_3k_model:Branding">
+      <style background_color="pink"/>
+      <company_name xposition="120" yposition="50" header_level="1" text="Potatoes &amp; Chili"/>
+      <company_logo source="wb3k-small.png" title=""/>
+    </components>
+    <components xsi:type="webshop_builder_3k_model:Result_list" xposition="10" yposition="160" distance_between_items="5">
+      <result_template xposition="30" width="800" height="130">
+        <style background_color="red">
+          <border thickness="5" color="black"/>
+        </style>
+        <item_picture name="item-picture" source="item:picture"/>
+        <text_fields xposition="10" yposition="20" name="static-text" text="blabla"/>
+        <text_fields xposition="5" yposition="5" name="Price" alignment="right" text="item:price"/>
+        <text_fields xposition="5" yposition="5" name="title" header_level="3" text="item:title"/>
+        <text_fields xposition="110" yposition="25" name="description" text="item:description"/>
+        <kb_link knowledge_base="//@knowledge_bases.0"/>
+      </result_template>
     </components>
   </pages>
-  <knowledge_bases xml_file_uri="db.xml"/>
-  <item_to_kb source="//@item_list_page/@results/@result_template" target="//@knowledge_bases.0"/>
-  <reuse_link source="//@item_list_page/@reuse_components.0" target="//@pages.0/@components.0"/>
-  <item_list_page title="List of Items">
-    <components xsi:type="webshop_builder_3k_model:Text_field" name="Header" text="Potato Chips:"/>
-    <reuse_components/>
-    <results name="of Potato Chips">
-      <result_template name="Article (minimized)">
-        <item_picture name="XPath://Item/Picture" source="XPath://Item/Picture" title=""/>
-        <text_fields name="Price" text="XPath://Item/Price"/>
-        <text_fields name="Title" text="XPath://Item/Title"/>
-      </result_template>
-    </results>
-  </item_list_page>
+  <knowledge_bases xml_file_uri="items.xml"/>
 </webshop_builder_3k_model:Webshop_builder_3k>

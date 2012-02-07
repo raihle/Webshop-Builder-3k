@@ -1,0 +1,20 @@
+Item needs to be linked to knowledge base > SOLVED IN MODEL
+Webshop needs an Item_list_page > SOLVED IN MODEL
+Webshop needs at least one Knowledge Base > SOLVED IN MODEL
+Webshop needs to have at least one item list page - i.e. the index page > SOLVED IN THE MODEL
+Item list page (or index page) has to have a result list > 
+	inv: webshop_builder.index_page.components -> select(oclTypeOf(Result_list))) -> size() = 1
+Webshop can have at most one item detail page > SOLVED IN THE MODEL
+Item detail page needs to have one and only one item >
+	inv: webshop_builder.item_details_page.components -> select(oclTypeOf(Item))) -> size() = 1
+border thickness should be bigger than 0
+	border.thickness > 0
+pages need width and height should be bigger or equal to 0
+	page.width >= 0
+	page.height >= 0
+components need width and height should be bigger or equal to 0
+	components.width >= 0
+	components.height >= 0
+text_field header_level should be from 0 to 6, being 0 a <p> element
+	Text_field.header_level >= 0
+	Text_field.header_level <= 6

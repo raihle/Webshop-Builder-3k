@@ -20,6 +20,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="yposition" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" lowerBound="1" eType="#//Reuses_component_link"
+        containment="true" eOpposite="#//Reuses_component_link/source"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="xposition" lowerBound="1"
@@ -45,7 +47,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="User_input_field" eSuperTypes="#//Component">
+  <eClassifiers xsi:type="ecore:EClass" name="User_input_field">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Knowledge_base">
@@ -53,7 +55,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Item_to_KB_link">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="item" lowerBound="1" eType="#//Item"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item" lowerBound="1" eType="#//Item"
+        eOpposite="#//Item/kb_link"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="knowledge_base" lowerBound="1"
         eType="#//Knowledge_base"/>
   </eClassifiers>
@@ -68,35 +71,30 @@
   <eClassifiers xsi:type="ecore:EClass" name="Text_input_field" eSuperTypes="#//User_input_field"/>
   <eClassifiers xsi:type="ecore:EClass" name="Reuses_component_link">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="#//Reuse_component"/>
+        eType="#//Reuse_component" eOpposite="#//Reuse_component/link"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//Component"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Webshop_builder_3k">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pages" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pages" lowerBound="1" upperBound="-1"
         eType="#//Page" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="free_components" upperBound="-1"
         eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="knowledge_bases" lowerBound="1"
         upperBound="-1" eType="#//Knowledge_base" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="item_to_kb" upperBound="-1"
-        eType="#//Item_to_KB_link" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reuse_link" upperBound="-1"
-        eType="#//Reuses_component_link" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="item_list_page" lowerBound="1"
-        eType="#//Item_list_page" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="item_detail_page" eType="#//Item_detail_page"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="navigation_to_page_link"
-        upperBound="-1" eType="#//Navigation_to_Page_link" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="company_name" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="index_page" lowerBound="1"
+        eType="#//Page"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item_details_page" eType="#//Page"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="item_picture" lowerBound="1"
         eType="#//Picture" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="text_fields" lowerBound="1"
         upperBound="-1" eType="#//Text_field" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kb_link" lowerBound="1"
+        eType="#//Item_to_KB_link" containment="true" eOpposite="#//Item_to_KB_link/item"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Login_widget"/>
   <eClassifiers xsi:type="ecore:EClass" name="Slideshow"/>
@@ -115,19 +113,14 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Source_code"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Item_detail_page" eSuperTypes="#//Page">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="item" lowerBound="1" eType="#//Item"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Item_list_page" eSuperTypes="#//Page">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="results" lowerBound="1"
-        eType="#//Result_list" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Navigation_button" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" lowerBound="1" eType="#//Navigation_to_Page_link"
+        containment="true" eOpposite="#//Navigation_to_Page_link/Source"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Navigation_to_Page_link">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Source" lowerBound="1"
-        eType="#//Navigation_button"/>
+        eType="#//Navigation_button" eOpposite="#//Navigation_button/link"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//Page"/>
   </eClassifiers>
