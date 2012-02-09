@@ -21,7 +21,7 @@
     </components>
     <components xsi:type="webshop_builder_3k_model:Navigation_button" xposition="50" yposition="32">
       <link target="//@pages.1"/>
-      <text name="" header_level="1" text="Go to the other page"/>
+      <text text="Go to the other page"/>
     </components>
   </pages>
   <pages title="Other page">

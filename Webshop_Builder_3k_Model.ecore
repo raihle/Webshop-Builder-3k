@@ -104,9 +104,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Webshop_builder_3k">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="Webshop_must_have_index_page Index_page_must_have_result_list Details_page_must_have_item"/>
+      <details key="constraints" value="Pages_must_have_unique_titles Webshop_must_have_index_page Index_page_must_have_result_list Details_page_must_have_item"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="Pages_must_have_unique_titles" value="self.pages->collect(title)->size() = self.pages->collect(title)->asSet()->size()"/>
       <details key="Webshop_must_have_index_page" value="not index_page.oclIsUndefined()"/>
       <details key="Index_page_must_have_result_list" value="index_page.oclIsUndefined() or index_page.components->select(oclIsTypeOf(Result_list))->size() = 1"/>
       <details key="Details_page_must_have_item" value="item_details_page.oclIsUndefined() or item_details_page.components->select(oclIsTypeOf(Item))->size() = 1"/>
@@ -149,6 +150,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Source_code"/>
   <eClassifiers xsi:type="ecore:EClass" name="Navigation_button" eSuperTypes="#//Component">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Navigation_button_must_have_picture_or_text"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="Navigation_button_must_have_picture_or_text" value="self.picture.oclAsSet()->size() + self.text.oclAsSet()->size() >= 1"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="link" lowerBound="1" eType="#//Navigation_to_Page_link"
         containment="true" eOpposite="#//Navigation_to_Page_link/Source"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="picture" eType="#//Picture"
