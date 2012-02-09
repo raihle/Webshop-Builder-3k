@@ -3,7 +3,7 @@
   <pages width="200" title="Index" canvas_color="blue">
     <components xsi:type="webshop_builder_3k_model:Branding">
       <style background_color="pink"/>
-      <company_name xposition="120" yposition="50" header_level="1" text="Potatoes &amp; Chili"/>
+      <company_name xposition="120" yposition="50" header_level="7" text="Potatoes &amp; Chili"/>
       <company_logo source="wb3k-small.png" title=""/>
     </components>
     <components xsi:type="webshop_builder_3k_model:Result_list" xposition="10" yposition="160" distance_between_items="5">

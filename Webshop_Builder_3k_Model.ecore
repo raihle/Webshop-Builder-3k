@@ -3,7 +3,21 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="webshop_builder_3k_model"
     nsURI="http://webshop_builder_3k_model/1.0" nsPrefix="webshop_builder_3k_model">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Page">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Width_of_page_must_be_non_negative Height_of_page_must_be_non_negative"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="Width_of_page_must_be_non_negative" value="width >= 0"/>
+      <details key="Width_of_page_must_be_non_negative$message" value="'The page has a negative width.'"/>
+      <details key="Height_of_page_must_be_non_negative" value="height >= 0"/>
+      <details key="Height_of_page_must_be_non_negative$message" value="'The page has a negative height.'"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" lowerBound="1"
         upperBound="-1" eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reuse_components" upperBound="-1"
@@ -24,6 +38,13 @@
         containment="true" eOpposite="#//Reuses_component_link/source"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Width_of_component_must_be_non_negative Height_of_componentmust_be_non_negative"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="Width_of_component_must_be_non_negative" value="width >= 0"/>
+      <details key="Height_of_componentmust_be_non_negative" value="height >= 0"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="xposition" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="yposition" lowerBound="1"
@@ -43,6 +64,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alternative_text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Text_field" eSuperTypes="#//Component">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Header_level_of_text_field_must_be_0_to_6"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="Header_level_of_text_field_must_be_0_to_6" value="header_level >= 0 and header_level &lt;= 6"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="header_level" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -76,6 +103,14 @@
         eType="#//Component"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Webshop_builder_3k">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Webshop_must_have_index_page Index_page_must_have_result_list Details_page_must_have_item"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="Webshop_must_have_index_page" value="not index_page.oclIsUndefined()"/>
+      <details key="Index_page_must_have_result_list" value="index_page.oclIsUndefined() or index_page.components->select(oclIsTypeOf(Result_list))->size() = 1"/>
+      <details key="Details_page_must_have_item" value="item_details_page.oclIsUndefined() or item_details_page.components->select(oclIsTypeOf(Item))->size() = 1"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pages" lowerBound="1" upperBound="-1"
         eType="#//Page" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="free_components" upperBound="-1"
@@ -114,9 +149,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Source_code"/>
   <eClassifiers xsi:type="ecore:EClass" name="Navigation_button" eSuperTypes="#//Component">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="link" lowerBound="1" eType="#//Navigation_to_Page_link"
         containment="true" eOpposite="#//Navigation_to_Page_link/Source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="picture" eType="#//Picture"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//Text_field"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Navigation_to_Page_link">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Source" lowerBound="1"
@@ -130,6 +168,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="background_color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Border">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="thickness_positive"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="thickness_positive" value="thickness > 0"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="thickness" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
