@@ -3,7 +3,7 @@
   <pages width="200" title="Index" canvas_color="blue">
     <components xsi:type="webshop_builder_3k_model:Branding">
       <style background_color="pink"/>
-      <company_name xposition="120" yposition="50" header_level="7" text="Potatoes &amp; Chili"/>
+      <company_name xposition="120" yposition="50" header_level="1" text="Potatoes &amp; Chili"/>
       <company_logo source="wb3k-small.png" title=""/>
     </components>
     <components xsi:type="webshop_builder_3k_model:Result_list" xposition="10" yposition="160" distance_between_items="5">
@@ -18,6 +18,17 @@
         <text_fields xposition="110" yposition="25" name="description" text="item:description"/>
         <kb_link knowledge_base="//@knowledge_bases.0"/>
       </result_template>
+    </components>
+    <components xsi:type="webshop_builder_3k_model:Navigation_button" xposition="50" yposition="32">
+      <link target="//@pages.1"/>
+      <text name="" header_level="1" text="Go to the other page"/>
+    </components>
+  </pages>
+  <pages title="Other page">
+    <components xsi:type="webshop_builder_3k_model:Picture" width="11" height="100" source="chips.jpg"/>
+    <components xsi:type="webshop_builder_3k_model:Navigation_button" xposition="50" yposition="32">
+      <link target="//@pages.0"/>
+      <picture source="item-picture-1.png"/>
     </components>
   </pages>
   <knowledge_bases xml_file_uri="items.xml"/>
