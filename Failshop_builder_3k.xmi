@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<webshop_builder_3k_model:Webshop_builder_3k xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:webshop_builder_3k_model="http://webshop_builder_3k_model/1.0" xsi:schemaLocation="http://webshop_builder_3k_model/1.0 Webshop_Builder_3k_Model.ecore" company_name="A company" index_page="//@pages.0" item_details_page="//@pages.1">
+  <pages width="-1" title="Index" height="-1">
+    <components xsi:type="webshop_builder_3k_model:Text_field" name="Title" header_level="7" text="blabla"/>
+    <components xsi:type="webshop_builder_3k_model:Navigation_button">
+      <link target="//@pages.1"/>
+    </components>
+  </pages>
+  <pages title="Index">
+    <components xsi:type="webshop_builder_3k_model:Picture" width="-1" height="-1" source="chips.jpg">
+      <style>
+        <border thickness="-1" color=""/>
+      </style>
+    </components>
+  </pages>
+  <knowledge_bases xml_file_uri="items.xml"/>
+</webshop_builder_3k_model:Webshop_builder_3k>
